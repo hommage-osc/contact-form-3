@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>読み込み中...</title>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SE4BXZT3WW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SE4BXZT3WW');
+
+    function getParam(name) {
+      const url = new URL(window.location.href);
+      return url.searchParams.get(name) || '';
+    }
+
+    window.addEventListener('load', function() {
+      const qrId = getParam('utm_content') || 'unknown';
+
+      // GA4にスキャンイベントを送信
+      gtag('event', 'qr_scan', {
+        qr_id: qrId,
+        destination: 'landing'
+      });
+
+      // Googleスプレッドシートに記録
+      const scriptUrl = 'https://script.google.com/macros/s/AKfycbyuVZnPHZDIiA1m6zBl8--hrn__-eN7N84tTBNv_JOTMdjHP0DwasBnmM9dxUy2aYBLIg/exec';
+      fetch(scriptUrl + '?qr_id=' + encodeURIComponent(qrId) + '&type=scan').catch(function(){});
+
+      // UTMパラメータをqr.htmlに引き継いでリダイレクト
+      setTimeout(function() {
+        const params = new URLSearchParams({
+          utm_source: 'qr',
+          utm_medium: 'print',
+          utm_campaign: 'tokuten_30off through SHI',
+          utm_content: qrId
+        });
+        window.location.href = './qr.html?' + params.toString();
+      }, 500);
+    });
+  </script>
+</head>
+<body style="display:flex;justify-content:center;align-items:center;height:100vh;font-family:sans-serif;background:#f0ede8;">
+  <div style="text-align:center;">
+    <div style="font-size:14px;color:#666;">読み込み中...</div>
+  </div>
+</body>
+</html>
