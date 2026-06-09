@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>無料相談・ご予約フォーム</title>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SE4BXZT3WW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SE4BXZT3WW');
+
+    function getParam(name) {
+      const url = new URL(window.location.href);
+      return url.searchParams.get(name) || '';
+    }
+
+    window.addEventListener('load', function() {
+      const qrId = getParam('utm_content') || 'unknown';
+      gtag('event', 'qr_form_view', {
+        qr_id: qrId,
+        destination: 'form'
+      });
+    });
+  </script>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+      background: #f0ede8;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      width: 100%;
+      max-width: 400px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    .header {
+      background: #185FA5;
+      padding: 1.25rem 1.5rem 1.1rem;
+    }
+    .header .sub { font-size: 12px; color: #B5D4F4; margin-bottom: 4px; }
+    .header h1 { font-size: 20px; font-weight: 600; color: #E6F1FB; }
+    .body { padding: 1.25rem 1.25rem 1.5rem; }
+    .banner {
+      background: #FAEEDA;
+      border: 1px solid #EF9F27;
+      border-radius: 10px;
+      padding: 10px 14px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      margin-bottom: 1.25rem;
+    }
+    .banner-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+    .banner-title { font-size: 13px; font-weight: 600; color: #633806; margin-bottom: 2px; }
+    .banner-text { font-size: 12px; color: #854F0B; line-height: 1.6; }
+    .field { margin-bottom: 14px; }
+    .field label { font-size: 13px; color: #444; display: block; margin-bottom: 5px; font-weight: 500; }
+    .field input, .field select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 15px;
+      color: #222;
+      outline: none;
+      transition: border 0.2s;
+      font-family: inherit;
+      background: #fff;
+    }
+    .field input:focus, .field select:focus { border-color: #185FA5; }
+    .field input::placeholder { color: #bbb; }
+    .submit-btn {
+      width: 100%;
+      background: #185FA5;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 13px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 4px;
+      font-family: inherit;
+    }
+    .submit-btn:hover { background: #0C447C; }
+    .note { font-size: 11px; color: #aaa; text-align: center; margin-top: 10px; }
+    .success { display: none; text-align: center; padding: 2rem 1.5rem; }
+    .success-icon { font-size: 48px; margin-bottom: 12px; }
+    .success h2 { font-size: 18px; color: #185FA5; margin-bottom: 8px; }
+    .success p { font-size: 13px; color: #666; line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="header">
+      <p class="sub">株式会社オマージュ｜人材サービス</p>
+      <h1>無料相談・ご予約フォーム</h1>
+    </div>
+    <div class="body">
+      <div class="banner">
+        <span class="banner-icon">🎁</span>
+        <div>
+          <p class="banner-title">在日中国企業協会会員・新規ご契約の方限定</p>
+          <p class="banner-text">初回30%OFF特典あり<br>QRコードからのお申し込みで適用されます</p>
+        </div>
+      </div>
+
+      <form id="contact-form" action="https://formspree.io/f/maqzylno" method="POST">
+        <div class="field">
+          <label>会社名 <span style="color:#e24b4a">*</span></label>
+          <input type="text" name="company" placeholder="株式会社〇〇" required>
+        </div>
+        <div class="field">
+          <label>ご担当者名 <span style="color:#e24b4a">*</span></label>
+          <input type="text" name="name" placeholder="山田 太郎" required>
+        </div>
+        <div class="field">
+          <label>電話番号 <span style="color:#e24b4a">*</span></label>
+          <input type="tel" name="phone" placeholder="03-0000-0000" required>
+        </div>
+        <div class="field">
+          <label>メールアドレス</label>
+          <input type="email" name="email" placeholder="example@company.com">
+        </div>
+        <div class="field">
+          <label>ご希望の相談内容 <span style="color:#e24b4a">*</span></label>
+          <select name="type" required>
+            <option value="">選択してください</option>
+            <option value="イベント運営">イベント運営</option>
+            <option value="イベント設営撤去">イベント設営撤去</option>
+            <option value="企業様向け無料お見積り">企業様向け無料お見積り</option>
+            <option value="料金・契約について">料金・契約について</option>
+            <option value="土日祝の緊急対応について">土日祝の緊急対応について</option>
+            <option value="その他のお問い合わせ">その他のお問い合わせ</option>
+          </select>
+        </div>
+        <div class="field" style="display:flex;align-items:flex-start;gap:8px;">
+          <input type="checkbox" id="privacy" name="privacy" required style="width:18px;height:18px;margin-top:2px;flex-shrink:0;accent-color:#185FA5;">
+          <label for="privacy" style="font-size:12px;color:#555;line-height:1.6;font-weight:400;">
+            ご送信の前に<a href="https://www.hommage-osc.co.jp/privacy/" target="_blank" style="color:#185FA5;">「個人情報の取り扱いについて」</a>の内容をお読みのうえ、ご同意お願いします。
+          </label>
+        </div>
+        <input type="hidden" name="source" value="QRコード">
+        <button type="submit" class="submit-btn">無料で相談する</button>
+        <p class="note">お問い合わせ後、担当者よりご連絡いたします</p>
+      </form>
+
+      <div class="success" id="success-msg">
+        <div class="success-icon">✅</div>
+        <h2>送信完了しました</h2>
+        <p>お問い合わせありがとうございます。<br>担当者より折り返しご連絡いたします。</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const qrId = getParam('utm_content') || 'unknown';
+      const data = new FormData(form);
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        gtag('event', 'qr_form_submit', {
+          qr_id: qrId,
+          destination: 'form'
+        });
+        form.style.display = 'none';
+        document.getElementById('success-msg').style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>
