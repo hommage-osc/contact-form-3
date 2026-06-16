@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>会員様限定 人材サービス特別優待 | オマージュ</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --red:    #C8202A;
+    --red-lt: #FDF0F0;
+    --navy:   #1B2A4A;
+    --gold:   #B8963E;
+    --gray:   #6B7280;
+    --light:  #F7F8FA;
+    --white:  #FFFFFF;
+  }
+
+  body {
+    font-family: 'Noto Sans JP', 'Noto Sans SC', sans-serif;
+    background: #E8EAF0;
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+  }
+
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--white);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ─── HEADER ─── */
+  .header {
+    background: var(--red);
+    padding: 30px 40px 24px;
+    position: relative;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--navy) 50%, var(--gold) 50%);
+  }
+  .header-eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 10px;
+  }
+  .header-title-jp {
+    font-size: 26px;
+    font-weight: 700;
+    color: white;
+    line-height: 1.3;
+    letter-spacing: 0.04em;
+  }
+  .header-title-cn {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.65);
+    margin-top: 6px;
+    letter-spacing: 0.08em;
+  }
+  .header-badge {
+    position: absolute;
+    top: 28px; right: 40px;
+    background: var(--gold);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 5px 14px;
+    border-radius: 20px;
+  }
+
+  /* ─── HERO OFFER ─── */
+  .hero {
+    background: var(--navy);
+    padding: 28px 40px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  .hero-number {
+    font-size: 72px;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    flex-shrink: 0;
+  }
+  .hero-number span {
+    font-size: 32px;
+    font-weight: 700;
+  }
+  .hero-text {
+    border-left: 2px solid rgba(255,255,255,0.15);
+    padding-left: 28px;
+  }
+  .hero-text-jp {
+    font-size: 17px;
+    font-weight: 700;
+    color: white;
+    line-height: 1.6;
+  }
+  .hero-text-cn {
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+    margin-top: 5px;
+    line-height: 1.6;
+  }
+  .hero-note {
+    font-size: 9px;
+    color: rgba(255,255,255,0.4);
+    margin-top: 8px;
+  }
+
+  /* ─── BODY ─── */
+  .body {
+    padding: 28px 40px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .section-label {
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--red);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #F0E8E8;
+  }
+  .section-label-cn {
+    font-size: 9px;
+    color: var(--gray);
+    font-weight: 400;
+  }
+
+  /* ─── SERVICE GRID ─── */
+  .service-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+  }
+  .service-card {
+    background: var(--light);
+    border-radius: 6px;
+    padding: 16px 16px 14px;
+    border-top: 3px solid var(--navy);
+  }
+  .service-card.event { border-top-color: var(--red); }
+  .service-card.logistics { border-top-color: var(--gold); }
+  .service-card.general { border-top-color: #4B8B6F; }
+  .service-icon { font-size: 22px; margin-bottom: 8px; }
+  .service-title-jp {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 3px;
+  }
+  .service-title-cn {
+    font-size: 10px;
+    color: var(--gray);
+    margin-bottom: 8px;
+  }
+  .service-desc {
+    font-size: 10.5px;
+    color: #4B5563;
+    line-height: 1.6;
+  }
+  .service-desc-cn {
+    font-size: 9.5px;
+    color: var(--gray);
+    line-height: 1.6;
+    margin-top: 3px;
+  }
+
+  /* ─── FLOW ─── */
+  .flow-row {
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+  .flow-step {
+    flex: 1;
+    background: var(--light);
+    border-radius: 6px;
+    padding: 14px 16px;
+    text-align: center;
+  }
+  .flow-step-num {
+    font-size: 9px;
+    font-weight: 700;
+    color: var(--red);
+    letter-spacing: 0.08em;
+    margin-bottom: 5px;
+  }
+  .flow-step-jp {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.4;
+    margin-bottom: 3px;
+  }
+  .flow-step-cn {
+    font-size: 9.5px;
+    color: var(--gray);
+    line-height: 1.4;
+  }
+  .flow-arrow {
+    font-size: 16px;
+    color: #CBD5E1;
+    padding: 0 6px;
+    flex-shrink: 0;
+  }
+
+  /* ─── WHY ─── */
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .why-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: var(--light);
+    border-radius: 6px;
+    padding: 12px 14px;
+  }
+  .why-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+  .why-jp {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.4;
+    margin-bottom: 2px;
+  }
+  .why-cn {
+    font-size: 10px;
+    color: var(--gray);
+    line-height: 1.4;
+  }
+
+  /* ─── QR SECTION ─── */
+  .qr-section {
+    background: var(--navy);
+    border-radius: 6px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .qr-box {
+    width: 96px;
+    height: 96px;
+    background: white;
+    border-radius: 4px;
+    padding: 5px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .qr-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .qr-text { flex: 1; }
+  .qr-title-jp {
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 4px;
+  }
+  .qr-title-cn {
+    font-size: 11px;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 10px;
+  }
+  .qr-points {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .qr-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    font-size: 10.5px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.5;
+  }
+  .qr-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+    margin-top: 5px;
+  }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    background: #111827;
+    padding: 14px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .footer-logo {
+    background: var(--red);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 2px;
+    letter-spacing: 0.04em;
+  }
+  .footer-company {
+    font-size: 11px;
+    color: rgba(255,255,255,0.7);
+  }
+  .footer-sub {
+    font-size: 9px;
+    color: rgba(255,255,255,0.35);
+    margin-top: 2px;
+  }
+  .footer-right {
+    text-align: right;
+    font-size: 9.5px;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.7;
+  }
+
+  @media print {
+    body { background: none; padding: 0; }
+    .page { width: 210mm; min-height: 297mm; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-badge">会員様限定</div>
+    <div class="header-eyebrow">中日企業協会 会員企業様へのご案内</div>
+    <div class="header-title-jp">人材・スタッフィングサービス<br>特別優待のご案内</div>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-number">30<span>%</span><br><span style="font-size:18px;color:rgba(255,255,255,0.5);font-weight:300;">OFF</span></div>
+    <div class="hero-text">
+      <div class="hero-text-jp">
+        協会会員企業様限定で、初回ご契約時に<br>
+        スタッフィングサービスを<strong style="color:var(--gold)">30%割引</strong>でご利用いただけます。
+      </div>
+      <div class="hero-note">※下記QRコードからのお申し込みに限ります</div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- SERVICES -->
+    <div>
+      <div class="section-label">対応サービス</div>
+      <div class="service-grid">
+        <div class="service-card event">
+          <div class="service-icon">🎪</div>
+          <div class="service-title-jp">イベント設営・運営</div>
+          <div class="service-desc">展示会・見本市・各種イベントの設営・運営スタッフを迅速に手配</div>
+        </div>
+        <div class="service-card logistics">
+          <div class="service-icon">🏭</div>
+          <div class="service-title-jp">倉庫・物流スタッフ</div>
+          <div class="service-desc">ピッキング・仕分け・フォークリフト対応など物流現場に即戦力を手配</div>
+        </div>
+        <div class="service-card general">
+          <div class="service-icon">👷</div>
+          <div class="service-title-jp">軽作業・一般スタッフ</div>
+          <div class="service-desc">短期・スポット対応も可。急な増員ニーズにも柔軟に対応</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FLOW -->
+    <div>
+      <div class="section-label">ご利用の流れ</div>
+      <div class="flow-row">
+        <div class="flow-step">
+          <div class="flow-step-num">STEP 1</div>
+          <div class="flow-step-jp">QRコードを読み込む</div>
+        </div>
+        <div class="flow-arrow">▶</div>
+        <div class="flow-step">
+          <div class="flow-step-num">STEP 2</div>
+          <div class="flow-step-jp">フォームに入力・送信</div>
+        </div>
+        <div class="flow-arrow">▶</div>
+        <div class="flow-step">
+          <div class="flow-step-num">STEP 3</div>
+          <div class="flow-step-jp">営業担当・祁よりご連絡</div>
+        </div>
+        <div class="flow-arrow">▶</div>
+        <div class="flow-step">
+          <div class="flow-step-num">STEP 4</div>
+          <div class="flow-step-jp">30%割引で契約成立</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHY -->
+    <div>
+      <div class="section-label">選ばれる理由</div>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="why-icon">⚡</div>
+          <div>
+            <div class="why-jp">スピード対応・即日手配も可能</div>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">🌐</div>
+          <div>
+            <div class="why-jp">日中バイリンガルスタッフ在籍</div>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">📋</div>
+          <div>
+            <div class="why-jp">労務管理コストを削減</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- QR -->
+    <div class="qr-section">
+      <div class="qr-box">
+        <img src="qr.png" alt="QRコード">
+      </div>
+      <div class="qr-text">
+        <div class="qr-title-jp">こちらから無料相談・お申し込み</div>
+        <div class="qr-points">
+          <div class="qr-point"><div class="qr-dot"></div>読み込むと会員様専用の申込ページへ直接アクセス</div>
+          <div class="qr-point"><div class="qr-dot"></div>30%割引が自動適用されます</div>
+          <div class="qr-point"><div class="qr-dot"></div>相談・見積りは完全無料です</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-left">
+      <div class="footer-logo">Hommage</div>
+      <div>
+        <div class="footer-company">株式会社オマージュ</div>
+        <div class="footer-sub">人材派遣・業務請負　｜　イベント設営・物流・倉庫　｜　www.hommage-osc.co.jp</div>
+      </div>
+    </div>
+    <div class="footer-right">
+      中日企業協会 会員様限定特典<br>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
