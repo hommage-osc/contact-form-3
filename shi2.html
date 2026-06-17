@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>会員特典のご提案 | オマージュ × 在日中国企業協会</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --red:     #C8202A;
+    --red-lt:  #F5E6E7;
+    --navy:    #1B2A4A;
+    --gold:    #B8963E;
+    --gray:    #6B7280;
+    --light:   #F7F8FA;
+    --white:   #FFFFFF;
+  }
+
+  body {
+    font-family: 'Noto Sans JP', 'Noto Sans SC', sans-serif;
+    background: #E8EAF0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 24px;
+  }
+
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--white);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* ─── HEADER ─── */
+  .header {
+    background: var(--navy);
+    padding: 28px 40px 22px;
+    position: relative;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--red) 50%, var(--gold) 50%);
+  }
+  .header-logos {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+  .logo-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--red);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 5px 12px;
+    border-radius: 2px;
+  }
+  .logo-x {
+    color: var(--gold);
+    font-size: 18px;
+    font-weight: 300;
+  }
+  .logo-badge.cjba {
+    background: transparent;
+    border: 1.5px solid var(--gold);
+    color: var(--gold);
+  }
+  .header-title-jp {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 0.06em;
+    line-height: 1.3;
+  }
+  .header-title-cn {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 0.08em;
+    margin-top: 4px;
+  }
+
+  /* ─── BODY ─── */
+  .body {
+    padding: 32px 40px 28px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .section-label {
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--red-lt);
+  }
+  .section-label-cn {
+    font-size: 9px;
+    color: var(--gray);
+    letter-spacing: 0.06em;
+  }
+
+  /* ─── CONCEPT BOX ─── */
+  .concept-box {
+    grid-column: 1 / -1;
+    background: var(--navy);
+    border-radius: 4px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .concept-icon {
+    font-size: 32px;
+    flex-shrink: 0;
+  }
+  .concept-text-jp {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.6;
+  }
+  .concept-text-cn {
+    font-size: 11.5px;
+    color: rgba(255,255,255,0.65);
+    margin-top: 4px;
+    line-height: 1.6;
+  }
+
+  /* ─── SCHEME CARD ─── */
+  .scheme-card {
+    background: var(--light);
+    border-radius: 4px;
+    padding: 18px 20px;
+    border-left: 3px solid var(--red);
+  }
+  .scheme-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 12px;
+  }
+  .scheme-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .step {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .step-num {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--red);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .step-text-jp {
+    font-size: 11.5px;
+    color: var(--navy);
+    line-height: 1.5;
+    font-weight: 500;
+  }
+  .step-text-cn {
+    font-size: 10px;
+    color: var(--gray);
+    line-height: 1.5;
+  }
+
+  /* ─── MERIT CARD ─── */
+  .merit-card {
+    background: var(--light);
+    border-radius: 4px;
+    padding: 18px 20px;
+    border-left: 3px solid var(--gold);
+  }
+  .merit-list {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+  }
+  .merit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .merit-icon {
+    font-size: 15px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .merit-text-jp {
+    font-size: 11.5px;
+    font-weight: 500;
+    color: var(--navy);
+    line-height: 1.5;
+  }
+  .merit-text-cn {
+    font-size: 10px;
+    color: var(--gray);
+    line-height: 1.5;
+  }
+
+  /* ─── SPECIAL OFFER ─── */
+  .offer-band {
+    grid-column: 1 / -1;
+    background: var(--red);
+    border-radius: 4px;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .offer-tag {
+    background: white;
+    color: var(--red);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 3px 8px;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  .offer-main {
+    flex: 1;
+  }
+  .offer-jp {
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    line-height: 1.4;
+  }
+  .offer-jp strong {
+    font-size: 22px;
+    font-weight: 700;
+  }
+  .offer-cn {
+    font-size: 11px;
+    color: rgba(255,255,255,0.75);
+    margin-top: 3px;
+  }
+  .offer-note {
+    font-size: 9.5px;
+    color: rgba(255,255,255,0.6);
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  /* ─── QR SECTION ─── */
+  .qr-section {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    background: var(--light);
+    border-radius: 4px;
+    padding: 18px 24px;
+  }
+  .qr-box {
+    width: 100px;
+    height: 100px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: white;
+    padding: 4px;
+    border: 1px solid #E5E7EB;
+  }
+  .qr-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+  .qr-description {
+    flex: 1;
+  }
+  .qr-title-jp {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .qr-title-cn {
+    font-size: 10px;
+    color: var(--gray);
+    margin-bottom: 10px;
+  }
+  .qr-points {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .qr-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    font-size: 11px;
+    color: #374151;
+    line-height: 1.5;
+  }
+  .qr-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+    margin-top: 5px;
+  }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    background: var(--navy);
+    padding: 14px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer-company {
+    font-size: 11px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 0.06em;
+  }
+  .footer-sub {
+    font-size: 9px;
+    color: rgba(255,255,255,0.5);
+    margin-top: 2px;
+    letter-spacing: 0.04em;
+  }
+  .footer-contact {
+    text-align: right;
+    font-size: 10px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.7;
+  }
+
+  @media print {
+    body { background: none; padding: 0; }
+    .page { width: 210mm; min-height: 297mm; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-logos">
+      <div class="logo-badge">Hommage</div>
+      <div class="logo-x">×</div>
+      <div class="logo-badge cjba">中日企業協会</div>
+    </div>
+    <div class="header-title-jp">会員企業様向け人材サービス 特別優待のご提案</div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- CONCEPT -->
+    <div class="concept-box">
+      <div class="concept-icon">🤝</div>
+      <div>
+        <div class="concept-text-jp">
+          協会が会員企業様へ提供できる「新しい福利厚生の一つ」として、<br>
+          Hommageの人材・スタッフィングサービスを優待価格でご紹介いただく仕組みです。
+        </div>
+      </div>
+    </div>
+
+    <!-- SCHEME -->
+    <div class="scheme-card">
+      <div class="section-label">スキーム概要</div>
+      <div class="scheme-steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div>
+            <div class="step-text-jp">協会様が会報・メール等でQRコードをご案内</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div>
+            <div class="step-text-jp">会員企業様がQRコードから専用ページへアクセス</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div>
+            <div class="step-text-jp">自動的に会員特典が適用された状態でお問い合わせ</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div>
+            <div class="step-text-jp">成約後の対応はすべてオマージュが担当</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MERIT -->
+    <div class="merit-card">
+      <div class="section-label">協会様のメリット</div>
+      <div class="merit-list">
+        <div class="merit-item">
+          <div class="merit-icon">✅</div>
+          <div>
+            <div class="merit-text-jp">会員への付加価値・福利厚生の拡充</div>
+          </div>
+        </div>
+        <div class="merit-item">
+          <div class="merit-icon">✅</div>
+          <div>
+            <div class="merit-text-jp">協会側の運用負担はほぼゼロ</div>
+          </div>
+        </div>
+        <div class="merit-item">
+          <div class="merit-icon">✅</div>
+          <div>
+            <div class="merit-text-jp">会員企業の人材課題に間接的に貢献</div>
+          </div>
+        </div>
+        <div class="merit-item">
+          <div class="merit-icon">✅</div>
+          <div>
+            <div class="merit-text-jp">紹介実績・連携内容は別途ご相談可能</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SPECIAL OFFER -->
+    <div class="offer-band">
+      <div class="offer-tag">MEMBER EXCLUSIVE</div>
+      <div class="offer-main">
+        <div class="offer-jp">初回ご契約 <strong>30%OFF</strong>　会員企業様限定特典</div>
+      </div>
+      <div class="offer-note">※QRコード経由のお申込みに限る</div>
+    </div>
+
+    <!-- QR SECTION -->
+    <div class="qr-section">
+      <div class="qr-box">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://hommage-osc.github.io/contact-form-3/qr.html%3Futm_source%3Dcjba%26utm_medium%3Dprint%26utm_content%3Dcjba_flyer" alt="QRコード">
+      </div>
+      <div class="qr-description">
+        <div class="qr-title-jp">会員様専用 申込みQRコード</div>
+        <div class="qr-points">
+          <div class="qr-point"><div class="qr-dot"></div>読み込むと協会経由専用ページへ直接アクセス</div>
+          <div class="qr-point"><div class="qr-dot"></div>特典（30%割引）が自動適用</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /body -->
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div>
+      <div class="footer-company">株式会社オマージュ</div>
+      <div class="footer-sub">人材派遣・業務請負サービス　｜　イベント設営・物流・倉庫</div>
+    </div>
+    <div class="footer-contact">
+      担当：祁梁（キ リョウ）<br>
+      連絡先：090-0668-3899<br>
+      e-mail：tokyo-eg@omasuta.com<br>
+      ご不明点はお気軽にご連絡ください
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
