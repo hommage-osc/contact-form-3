@@ -345,42 +345,30 @@
 
   /* ─── FOOTER ─── */
   .footer {
-    background: #111827;
+    background: var(--navy);
     padding: 14px 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-  .footer-left {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .footer-logo {
-    background: var(--red);
-    color: white;
-    font-size: 10px;
-    font-weight: 700;
-    padding: 4px 10px;
-    border-radius: 2px;
-    letter-spacing: 0.04em;
-  }
   .footer-company {
     font-size: 11px;
-    color: rgba(255,255,255,0.7);
+    font-weight: 700;
+    color: white;
+    letter-spacing: 0.06em;
   }
   .footer-sub {
     font-size: 9px;
-    color: rgba(255,255,255,0.35);
+    color: rgba(255,255,255,0.5);
     margin-top: 2px;
+    letter-spacing: 0.04em;
   }
-  .footer-right {
+  .footer-contact {
     text-align: right;
-    font-size: 9.5px;
-    color: rgba(255,255,255,0.4);
+    font-size: 10px;
+    color: rgba(255,255,255,0.65);
     line-height: 1.7;
   }
-
 
   @media print {
     body { background: none; padding: 0; }
